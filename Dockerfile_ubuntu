@@ -1,0 +1,10 @@
+
+FROM ubuntu:latest
+
+RUN apt update && apt upgrade -y
+RUN apt install nginx curl zip unzip -y
+RUN apt install default-jdk python3 python3-doc clang golang-go gcc g++ -y
+RUN curl -s "https://get.sdkman.io" | bash
+RUN /bin/bash -c "source /root/.sdkman/bin/sdkman-init.sh; sdk version; sdk install kotlin"
+
+CMD [ "echo","The development environment has now been fully setup with C, C++, JAVA, Python3, Go and Kotlin" ]

@@ -1,0 +1,10 @@
+version: '3'
+services: 
+  ubuntu:
+    build: 
+      context: . 
+      dockerfile: Dockerfile_ubuntu
+    volumes:
+      - ./:/var/bfh
+    # entrypoint: [ "bash", "-c", "sdk install kotlin"] 
+    command: [  "sleep","infinity"]
